@@ -17,11 +17,11 @@ interface StorableMarket : Storable {
      */
     fun getAllPrices():Map<String,String>
     /**
-     * returns a map that maps user-ids to pair of first::status and second::list of their orders , possibly some of them canceled or modified
+     * returns a map that maps user-ids to list of pairs : first::ids and second::status , possibly some of them canceled or modified
      * status can be canceled , modified and nmc ; nmc for not modified neither canceled-
      * if its hard to give the status here also its ok ... it will be in OrdersIDsWithStatus
      */
-    fun getUserIDsWithOrders():Map<String,Pair<String,List<String>>>
+    fun getUserIDsWithOrders():Map<String,List<Pair<String,String>>>
     /**
      * *return map of all valid order ids , possibly canceled also ..
      * with their status : canceled , modified or nmc
